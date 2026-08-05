@@ -16,7 +16,7 @@ on:
 
 env:
   GITHUB_TOKEN: ${{secrets.GITHUB_TOKEN}}
-  WRT_REPO: https://github.com/weekdaycare/bl-mt798x-dhcpd
+  WRT_REPO: https://github.com/ericyin/bl-mt798x-dhcpd
   WRT_BRANCH: ${{ github.event.inputs.branch }}
   PRERELEASE: ${{ github.event.inputs.prerelease }}
 
@@ -54,7 +54,7 @@ jobs:
       - name: 🛠️ Compile Firmware
         run: |
           cd ./wrt/
-          SOC=mt7981 BOARD=cudy_tr3000-v1-256mb VERSION=2025 MULTI_LAYOUT=0 ./build.sh
+          # SOC=mt7981 BOARD=cudy_tr3000-v1-256mb VERSION=2025 MULTI_LAYOUT=0 ./build.sh
           SOC=mt7981 BOARD=cudy_tr3000-v1 VERSION=2025 MULTI_LAYOUT=1 ./build.sh
 
       - name: 📦 Package Firmware
