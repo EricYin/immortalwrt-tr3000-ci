@@ -240,9 +240,7 @@ jobs:
         uses: softprops/action-gh-release@master
         with:
           tag_name: ${{env.WRT_BRANCH}}-${{env.WRT_DATE}}
-          files: |
-            ./wrt/upload/*.*
-            !./wrt/upload/*bl2.bin
+          files: ./wrt/upload/!(*-bl2.bin)
           body: |
             这是个平台固件包，内含多个设备！
             请注意选择你需要的设备固件！
