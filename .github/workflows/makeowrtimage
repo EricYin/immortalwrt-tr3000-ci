@@ -171,16 +171,16 @@ jobs:
           cd ./wrt/package/
 
           $GITHUB_WORKSPACE/Scripts/Packages.sh
-          $GITHUB_WORKSPACE/Scripts/Handles.sh
+          #$GITHUB_WORKSPACE/Scripts/Handles.sh
 
       - name: Custom Settings
         run: |
           cd ./wrt/
 
           if [[ "${WRT_CONFIG,,}" == *"test"* ]]; then
-            cat $GITHUB_WORKSPACE/Config/$WRT_CONFIG.txt >> .config
+            cat $GITHUB_WORKSPACE/Config/$WRT_CONFIG >> .config
           else
-            cat $GITHUB_WORKSPACE/Config/$WRT_CONFIG.txt $GITHUB_WORKSPACE/Config/GENERAL.txt >> .config
+            cat $GITHUB_WORKSPACE/Config/$WRT_CONFIG >> .config
           fi
 
           $GITHUB_WORKSPACE/Scripts/Settings.sh
@@ -217,7 +217,7 @@ jobs:
         run: |
           cd ./wrt/ && mkdir ./upload/
 
-          cp -f ./.config ./upload/Config-"$WRT_CONFIG"-"$WRT_INFO"-"$WRT_BRANCH"-"$WRT_DATE".txt
+          cp -f ./.config ./upload/Config-"$WRT_CONFIG"-"$WRT_INFO"-"$WRT_BRANCH"-"$WRT_DATE".config
 
           if [[ $WRT_TEST != 'true' ]]; then
             echo "WRT_KVER=$(find ./bin/targets/ -type f -name "*.manifest" -exec grep -oP '^kernel - \K[\d\.]+' {} \;)" >> $GITHUB_ENV
