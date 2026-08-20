@@ -47,11 +47,10 @@ on:
         required: true
         type: string
       WRT_PACKAGE:
-        default: false
         required: false
         type: string
       WRT_TEST:
-        default: false
+        default: 'false'
         required: false
         type: string
 
