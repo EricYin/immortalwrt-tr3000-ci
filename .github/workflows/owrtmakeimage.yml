@@ -35,7 +35,7 @@ on:
         required: true
         type: string
       WRT_REPO:
-        default: https://github.com/ericyin/immortalwrt.git
+        default: https://github.com/EricYin/immortalwrt.git
         required: true
         type: string
       WRT_BRANCH:
@@ -43,7 +43,7 @@ on:
         required: true
         type: string
       WRT_SOURCE:
-        default: ericyin/immortalwrt
+        default: EricYin/immortalwrt
         required: true
         type: string
       WRT_PACKAGE:
