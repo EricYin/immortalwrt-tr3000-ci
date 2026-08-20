@@ -1,5 +1,5 @@
 name: 
-  OWRT Make Image
+  OWrt Make Image
 
 permissions:
   contents: write
