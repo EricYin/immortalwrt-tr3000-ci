@@ -12,4 +12,5 @@ $bytes[$offset..($offset + 5)] |
     ForEach-Object { $_.ToString("X2") } -join ":"
 
 hexdump -v -n 6 -s 0xde00 -e '5/1 "%02X:" 1/1 "%02X\n"' /tmp/bdinfo.bin
-mtd write /tmp/bdinfo.fixed.bin bdinfo
+insmod mtd-rw.ko i_want_a_brick=1
+mtd write /tmp/bdinfo.bin bdinfo
