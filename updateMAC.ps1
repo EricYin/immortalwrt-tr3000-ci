@@ -2,7 +2,7 @@ $file='C:\tr3000\spi_full_bak\bdinfo.bin'
 Copy-Item $file "$file.bak"
 
 $offset = 0xDE00
-$mac = [byte[]](0xFC, 0xA0, 0x5A, 0x30, 0x3F, 0x6C)
+$mac = [byte[]](0xFD, 0xA1, 0x5B, 0x31, 0x40, 0x6D)
 
 $bytes = [System.IO.File]::ReadAllBytes($file)
 # Properly copy the MAC address bytes into the array
