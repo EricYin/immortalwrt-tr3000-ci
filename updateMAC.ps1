@@ -1,4 +1,3 @@
-
 $file='C:\tr3000\spi_full_bak\bdinfo.bin'
 Copy-Item $file "$file.bak"
 
